@@ -1,0 +1,21 @@
+<div class="product-items" *ngIf="productItems.length > 0">
+  <h2 class="text-center">Product Items</h2>
+  <div class="product-item-container">
+    <div *ngFor="let item of productItems" class="product-item card">
+      <div class="card-body">
+        <h5 class="card-title">Product Item</h5>
+        <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+        <p><strong>Price:</strong> {{ item.price | currency }}</p>
+        <p><strong>Discount:</strong> {{ (item.discount * 100) | number: '1.0-2' }}%</p>
+        <div class="links">
+          <a [href]="item._links.self.href" target="_blank" class="btn btn-primary">View Product Item</a>
+          <a [href]="item._links.bill.href" target="_blank" class="btn btn-secondary">View Bill</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="productItems.length === 0" class="empty-message text-center">
+  <p>No product items found.</p>
+</div>

@@ -1,0 +1,14 @@
+{
+  "/api": {
+    "target": "http://localhost:8888",
+    "secure": false,
+    "changeOrigin": true
+  },
+
+  "/bills": {
+    "target": "http://localhost:8084",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
+
